@@ -38,11 +38,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.myResponseAll.observe(this, Observer { response ->
             if (response.isSuccessful) {
                 Log.d("Response isSuccessful ", response.errorBody().toString())
-
                 response.body()?.let { adapter.setData(it) }
-//                Log.d("Response", response.body()?.title.toString())
-//                Log.d("Response", response.body()?.url.toString())
-
             } else {
                 Log.d("Response Error ", response.errorBody().toString())
             }
